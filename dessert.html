@@ -1,0 +1,253 @@
+<html>
+    <head>
+        <title>Our Dessert Menu</title>
+        <style>#header {
+            background-color: #fae5d3;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #header img {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown button {
+            background-color: #f4a460;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .dropdown button:hover {
+            background-color: #d2691e;
+            transform: scale(1.05);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fae5d3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            z-index: 1;
+            padding: 10px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: #6b4423;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            color: #d2691e;
+            transform: scale(1.05);
+        }
+
+            body {
+                background-color: rgb(251, 245, 237);
+                font-family: Arial, sans-serif;
+            }
+
+            #header {
+                font-size: 19px;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: rgb(66, 66, 66);
+                font-weight: bold;
+                margin: 0 15px;
+            }
+
+            @keyframes move-text {
+                from {
+                    transform: translateX(0);
+                }
+                to {
+                    transform: translateX(100%);
+                }
+            }
+
+            #box {
+                width: 100%;
+                height: 40px;
+                overflow: hidden;
+                position: relative;
+                background-color: antiquewhite;
+                margin: 20px 0;
+            }
+
+            #moving-text {
+                position: absolute;
+                white-space: nowrap;
+                color: rgb(24, 24, 24);
+                font-weight: bold;
+                font-size: 30px;
+                animation: move-text 8s linear infinite;
+            }
+
+            #dessert-section {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+            }
+
+            .dessert-item {
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .dessert-item:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            }
+
+            .dessert-item img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-bottom: 2px solid rgb(230, 126, 34);
+            }
+
+            .dessert-info {
+                padding: 20px;
+                text-align: center;
+            }
+
+            .dessert-info h3 {
+                font-size: 1.5em;
+                color: #555;
+                margin: 0;
+                text-shadow: 0 0 5px rgba(230, 126, 34, 0.8);
+            }
+
+            .dessert-info p {
+                margin: 10px 0;
+                color: #777;
+            }
+
+            .price {
+                font-weight: bold;
+                color: #222;
+            }
+
+            .buy-now {
+                display: inline-block;
+                margin-top: 10px;
+                padding: 10px 20px;
+                background-color: #e67e22;
+                color: #fff;
+                border-radius: 5px;
+                font-weight: bold;
+                text-decoration: none;
+                transition: background-color 0.3s ease;
+            }
+
+            .buy-now:hover {
+                background-color: #d35400;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <a href="home page updated .html">Home</a>
+            
+        </div>
+
+        <div id="box">
+            <div id="moving-text">Sweeten Your Day with Our Desserts</div>
+        </div>
+
+        <div id="dessert-section">
+           
+            <div class="dessert-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJVfvNLpw4iQKitKWIjJMhU0Z5UroBCiluOQ&s">
+                <div class="dessert-info">
+                    <h3>Burnt Cheesecake</h3>
+                    <p>Delightfully creamy with a caramelized top.</p>
+                    <p class="price">₹200</p>
+                    <a href="#" class="buy-now">Buy Now</a>
+                </div>
+            </div>
+            <div class="dessert-item">
+                <img src="https://www.alsothecrumbsplease.com/wp-content/uploads/2018/05/Tiramisu-Cake-27.jpg">
+                <div class="dessert-info">
+                    <h3>Tiramisu</h3>
+                    <p>Classic Italian dessert with coffee and mascarpone.</p>
+                    <p class="price">₹220</p>
+                    <a href="#" class="buy-now">Buy Now</a>
+                </div>
+            </div>
+            <div class="dessert-item">
+                <img src="https://hicaps.com.ph/wp-content/uploads/2021/09/Banoffee-Pie-2.png">
+                <div class="dessert-info">
+                    <h3>Banoffee Pie</h3>
+                    <p>A heavenly mix of bananas, cream, and toffee.</p>
+                    <p class="price">₹190</p>
+                    <a href="#" class="buy-now">Buy Now</a>
+                </div>
+            </div>
+            <div class="dessert-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbikAoZ4n3x5l9tzb5UiDfZMWDUgItVng-rd304bSGQ2qYWh2vgOoQCsMTxdCTgbx1qb4&usqp=CAU">
+                <div class="dessert-info">
+                    <h3>Lemon Bars</h3>
+                    <p>Sweet and tangy dessert bars with a buttery crust.</p>
+                    <p class="price">₹180</p>
+                    <a href="#" class="buy-now">Buy Now</a>
+                </div>
+            </div>
+            <div class="dessert-item">
+                <img src="https://theloopywhisk.com/wp-content/uploads/2021/07/Strawberry-Cheesecake_730px-featured-500x375.jpg">
+                <div class="dessert-info">
+                    <h3>Strawberry Cheesecake</h3>
+                    <p>Creamy cheesecake with a fresh strawberry topping.</p>
+                    <p class="price">₹210</p>
+                    <a href="#" class="buy-now">Buy Now</a>
+                </div>
+            </div>
+            <div class="dessert-item">
+                <img src="https://www.rainbownourishments.com/wp-content/uploads/2022/02/vegan-chocolate-mousse-tart-1.jpg">
+                <div class="dessert-info">
+                    <h3>Chocolate Tart</h3>
+                    <p>Rich chocolate ganache in a crispy tart shell.</p>
+                    <p class="price">₹230</p>
+                    <a href="#" class="buy-now">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

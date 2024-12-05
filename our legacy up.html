@@ -1,0 +1,238 @@
+<html>
+    <head>
+        <title>Our Legacy</title>
+        <style>
+        #header {
+            background-color: #fae5d3;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #header img {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown button {
+            background-color: #f4a460;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .dropdown button:hover {
+            background-color: #d2691e;
+            transform: scale(1.05);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fae5d3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            z-index: 1;
+            padding: 10px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: #6b4423;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            color: #d2691e;
+            transform: scale(1.05);
+        }
+
+            body {
+                background-color: rgb(251, 245, 237);
+            }
+
+            #header {
+                font-size: 19px;
+            }
+
+            a {
+                text-decoration: none;
+                color: rgb(66, 66, 66);
+                font-weight: bold;
+                transition: color 0.3s ease;
+            }
+
+            a:hover {
+                color: rgb(230, 126, 34);
+                text-shadow: 0 0 8px rgba(230, 126, 34, 0.8);
+            }
+
+            @keyframes move-text {
+                from {
+                    transform: translateX(0px);
+                }
+                to {
+                    transform: translateX(1200px);
+                }
+            }
+
+            #box {
+                width: 1500px;
+                height: 40px;
+                border: 2px dotted #000;
+                overflow: hidden;
+                position: relative;
+                background: linear-gradient(45deg, #ffe6e6, #fff5e6, #ffebcc);
+                animation: gradient-shift 6s linear infinite;
+            }
+
+            @keyframes gradient-shift {
+                0% {
+                    background-position: 0% 50%;
+                }
+                100% {
+                    background-position: 100% 50%;
+                }
+            }
+
+            #moving-text {
+                position: absolute;
+                white-space: nowrap;
+                color: rgb(24, 24, 24);
+                font-weight: bold;
+                font-size: 25px;
+                animation: move-text 8s linear infinite;
+            }
+
+            h2 {
+                text-align: center;
+                font-weight: bold;
+                font-size: 30px;
+                color: rgb(96, 43, 5);
+                transition: transform 0.3s ease, color 0.3s ease;
+            }
+
+            h2:hover {
+                color: rgb(230, 126, 34);
+                transform: scale(1.1);
+                text-shadow: 0 0 12px rgba(230, 126, 34, 0.8);
+            }
+
+            #legacy_text {
+                margin-left: 10px;
+                margin-right: 10px;
+                text-align: justify;
+                font-size: 25px;
+                color: rgb(96, 43, 5);
+            }
+
+            #legacy_text ul li {
+                margin-bottom: 15px;
+                transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            #legacy_text ul li:hover {
+                background-color: rgba(255, 223, 186, 0.5);
+                box-shadow: 0 0 10px rgba(255, 173, 96, 0.8);
+                border-radius: 5px;
+            }
+
+            img {
+                border-radius: 30px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            img:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            }
+
+            mark {
+                background-color: rgba(255, 89, 0, 0.26);
+                transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            mark:hover {
+                background-color: rgba(255, 89, 0, 0.5);
+                box-shadow: 0 0 10px rgba(255, 89, 0, 0.8);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCMZ-gj3j5ckWBTNxBcWLIuk24j7ecX0EO3g&s" alt="Coffee Logo">
+            <div id="header">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="our legacy up.html">Our Legacy</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tesstmonisl.html">Customer Testimonials</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="feedback.html">Feedback</a>
+            </div><br>
+            <div class="dropdown">
+                <button>Menu</button>
+                <div class="dropdown-content">
+                    
+                    <a href="#">Signature Drinks</a>
+                    <a href="#">Hot Foods</a>
+                    <a href="#">Deluctable Desserts</a>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div id="box">
+            <div id="moving-text"> Maze Coffee House is where artistry meets indulgence. Every cup is a masterpiece crafted with precision and love for coffee enthusiasts. </div>
+        </div>   
+        <br>
+        <h2><b>&nbsp;&nbsp;<mark>About Our Legacy</mark></b></h2>
+        <div id="legacy_text">
+            At Luxurious Coffee House, we’re more than just a place to grab a cup of coffee — we’re a destination where coffee lovers come together to experience the true essence of quality, flavor, and passion in every sip. For us, coffee is an art, and every cup tells a story of dedication, skill, and the pursuit of perfection.
+
+            Our team of skilled baristas works tirelessly to deliver exceptional coffee experiences, carefully crafting each cup with the finest beans and the perfect balance of flavors. Whether you’re looking for the richness of a classic espresso or the comforting sweetness of a caramel latte, our menu offers something for every taste.
+        </div>
+        <br>
+        <img src="https://c0.wallpaperflare.com/preview/486/363/600/chair-furniture-restaurant-human.jpg" style="width: 1500px; height: 500px;">
+
+        <br><br>
+        <h2><b>&nbsp;&nbsp;<mark>Our Signature Flavors</mark></b></h2>
+        <div id="legacy_text">
+            <ul>
+                <li><strong>Espresso:</strong> The heart of all our coffee drinks...</li>
+                <li><strong>Caramel Latte:</strong> A sweet and creamy indulgence...</li>
+                <li><strong>Mocha Delight:</strong> Perfect for chocolate lovers...</li>
+                <li><strong>Vanilla Bean Latte:</strong> Smooth and fragrant...</li>
+                <li><strong>Cold Brew:</strong> Refreshingly bold and smooth...</li>
+                <li><strong>Hazelnut Cappuccino:</strong> Aromatic and nutty twist...</li>
+            </ul>
+        </div>
+        <img src="https://w0.peakpx.com/wallpaper/1000/355/HD-wallpaper-flavours-coffee-good-morning-cafe-time-hq-coffee-beans-cold-creamy-coffee-glass-coffee-grinders-coffee-hot-coffee-with-milk-cups.jpg" style="width: 1500px; height: 500px;">
+
+        <br><br>
+        <h2><b>&nbsp;&nbsp;<mark>What Makes Us Unique</mark></b></h2>
+        <div id="legacy_text">
+            <ul>
+                <li><strong>Expertly Curated Beans:</strong> Our coffee starts with the finest beans, carefully selected from the best growers around the world. From the high-altitude regions of Colombia to the lush, volcanic soil of Ethiopia, we ensure every bean is handpicked for its unique flavor profile, freshness, and quality.</li>
+                <li><strong>Crafted with Care:</strong> At Maze Coffee Shop , coffee is not just a beverage — it’s a craft. Our baristas are trained to pour their expertise and passion into every cup. We take pride in the little details, from perfecting the grind size to steaming the milk to just the right texture, ensuring a consistent and flawless cup of coffee each time</li>
+                <li><strong>Sustainability and Community:</strong> We believe in giving back to the communities that support us and the environment that nurtures our coffee beans. That’s why we support sustainable farming practices, use eco-friendly packaging, and actively participate in community initiatives. When you sip on a cup of coffee from us, you can rest assured knowing you’re part of something bigger.</li>
+                <li><strong>Custom Creations:</strong> We understand that everyone’s taste is different, which is why we offer a range of options to personalize your coffee just the way you like it. Whether you prefer it with a dash of cinnamon, a splash of almond milk, or a unique syrup flavor, we’re here to make your perfect cup.</li>
+                <li><strong>A Cozy Atmosphere:</strong> At Maze Coffee Shop , we’ve created a space where you can relax, unwind, and enjoy your coffee in comfort. With cozy seating, soft lighting, and a welcoming ambiance, we offer more than just great coffee — we offer a place where you can escape, catch up with friends, or simply enjoy a quiet moment alone.</li>
+            </ul>
+        </div>
+    </body>
+</html>

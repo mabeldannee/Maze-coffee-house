@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Coffee House</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes move-text {
+            from {
+                transform: translateX(0px);
+            }
+            to {
+                transform: translateX(1200px);
+            }
+        }
+
+        @keyframes fade-in {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes title-glow {
+            0%, 100% { text-shadow: 0 0 10px #ff4500, 0 0 20px #ff4500; }
+            50% { text-shadow: 0 0 20px #f4a460, 0 0 30px #f4a460; }
+        }
+
+        body {
+            background: linear-gradient(to bottom, #fff5e1, #fbe3d5);
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        #header {
+            background-color: #fae5d3;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #header img {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown button {
+            background-color: #f4a460;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .dropdown button:hover {
+            background-color: #d2691e;
+            transform: scale(1.05);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fae5d3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            z-index: 1;
+            padding: 10px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: #6b4423;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            color: #d2691e;
+            transform: scale(1.05);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 60px;
+            color: #6b4423;
+            margin: 50px 0;
+            animation: title-glow 2s infinite;
+        }
+
+        #box {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            height: 40px;
+            border: 2px dotted #6b4423;
+            overflow: hidden;
+            position: relative;
+            background-color: #fae5d3;
+            box-shadow: 0 0 10px #d2691e;
+        }
+
+        #moving-text {
+            position: absolute;
+            white-space: nowrap;
+            color: #6b4423;
+            font-weight: bold;
+            font-size: 30px;
+            animation: move-text 8s linear infinite;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        .barista-section {
+            margin: 40px auto;
+            max-width: 1200px;
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .barista-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .barista-header h2 {
+            font-size: 28px;
+            color: #333;
+        }
+
+        .barista-header .view-menu {
+            font-size: 16px;
+            color: #008c5b;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .barista-header .view-menu:hover {
+            text-decoration: underline;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            width: 240px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .card .price {
+            font-size: 18px;
+            color: #008c5b;
+            font-weight: bold;
+        }
+
+        .card .add-item {
+            background-color: #008c5b;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .card .add-item:hover {
+            background-color: #005f3d;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            background-color: #fff;
+            border: 2px solid #ddd;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .arrow.left {
+            left: 10px;
+        }
+
+        .arrow.right {
+            right: 10px;
+        }
+        #whitebox
+            {
+                width:1500px;
+                height: 40px;
+                background-color: antiquewhite;
+            }
+
+            #image_dull:hover
+            {
+                opacity: 0.5;
+                
+            }
+
+        footer {
+            background-color: #fae5d3;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #6b4423;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        footer a:hover {
+            color: #d2691e;
+            transform: scale(1.1);
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fade-in 2s ease-in forwards;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCMZ-gj3j5ckWBTNxBcWLIuk24j7ecX0EO3g&s" alt="Coffee Logo">
+        <div id="header">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="home page updated .html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="our legacy up.html">Our Legacy</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tesstmonisl.html">Customer Testimonials</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="feedback.html">Feedback</a>
+        </div><br>
+        <div class="dropdown">
+            <button>Menu</button>
+            <div class="dropdown-content">
+                
+                <a href="signature menu up.html">Signature Drinks</a>
+                
+                <a href="dessert.html">Deluctable Desserts</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <h1 class="fade-in">Luxury Coffee House</h1>
+
+    <div id="box" class="fade-in">
+        <div id="moving-text"> Where Every Sip Tells a Story of Love, Craft, and Flavor! </div>
+    </div>
+
+    <div class="gallery fade-in">
+        <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3gIbYwX4W0_S5STtoBTAoXqZ9-xEwCPAxmf6vPIq7mkoJOxoqJ5gPD8QJJI1KM4jUZ7I&usqp=CAU" alt="Golden Cappuccino"></a>
+        <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMmxyMCYFpAEzTFC73LYjNCOLr3wa6VtzHLA&s" alt="Latte Macchiato"></a>
+        
+    </div>
+    <div class="barista-section">
+        <div class="barista-header">
+            <h2>Barista Recommends</h2>
+            <a href="#" class="view-menu">View Menu</a>
+        </div>
+        <div class="card-container">
+            <button class="arrow left">&lt;</button>
+
+            <!-- Drink Option 1 -->
+            <div class="card">
+                <img src="https://img.freepik.com/premium-photo/cappuccino-coffee-coffee-beans-ai-generated_145713-6941.jpg" alt="Cappuccino">
+                <h3>Cappuccino</h3>
+                <p>Short</p>
+                <p class="price">₹ 283.50</p>
+                <button class="add-item">Add Item</button>
+            </div>
+
+            <!-- Drink Option 2 -->
+            <div class="card">
+                <img src="https://i.shgcdn.com/91e306a3-46d0-42a1-b1d3-32d96e105101/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Dalgona Coffee">
+                <h3>Dalgona Coffee</h3>
+                <p></p>
+                <p class="price">₹ 309.75</p>
+                <button class="add-item">Add Item</button>
+            </div>
+
+            <!-- Drink Option 3 -->
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR3phaGXY6RmZkyTx4VD6GftMI9HSQRF8dog&s" alt="Vanilla Milkshake">
+                <h3>Cortada</h3>
+                <p></p>
+                <p class="price">₹ 378.00</p>
+                <button class="add-item">Add Item</button>
+            </div>
+
+            <!-- Dessert Option 1 -->
+            <div class="card">
+                <img src="https://livforcake.com/wp-content/uploads/2017/01/chocolate-ganache-tart-thumb.jpg" alt="Chocolate Brownie">
+                <h3>Chocolate Tart</h3>
+                <p></p>
+                <p class="price">₹ 150.00</p>
+                <button class="add-item">Add Item</button>
+            </div>
+
+            
+            <button class="arrow right">&gt;</button>
+        </div>
+    </div>
+
+    <div id="whitebox"></div>
+    <h2><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Learn more about the world of coffee   (:click:)</b></h2>
+    
+    <div id="image_dull"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=N8meCjVsJWI"><img src="https://img.freepik.com/free-photo/view-coffee-making-machine_23-2150698769.jpg" style="height: 400px; width: 1100px; border-radius: 50px;"></a>
+    <footer>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+    </footer>
+</body>
+</html>

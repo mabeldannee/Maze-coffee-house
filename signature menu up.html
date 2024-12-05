@@ -1,0 +1,219 @@
+
+<html>
+    <head>
+        <title>Our Signature Menu</title>
+        <style>
+            body {
+                background-color: rgb(251, 245, 237);
+                font-family: Arial, sans-serif;
+            }
+
+            #header {
+                font-size: 19px;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: rgb(66, 66, 66);
+                font-weight: bold;
+                margin: 0 15px;
+            }
+
+            @keyframes move-text {
+                from {
+                    transform: translateX(0);
+                }
+                to {
+                    transform: translateX(100%);
+                }
+            }
+
+            #box {
+                width: 100%;
+                height: 40px;
+                overflow: hidden;
+                position: relative;
+                background-color: antiquewhite;
+                margin: 20px 0;
+            }
+
+            #moving-text {
+                position: absolute;
+                white-space: nowrap;
+                color: rgb(24, 24, 24);
+                font-weight: bold;
+                font-size: 30px;
+                animation: move-text 8s linear infinite;
+            }
+
+            #coffee-section {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+            }
+
+            .coffee-item {
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .coffee-item:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            }
+
+            .coffee-item img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-bottom: 2px solid rgb(230, 126, 34);
+            }
+
+            .coffee-info {
+                padding: 20px;
+                text-align: center;
+            }
+
+            .coffee-info h3 {
+                font-size: 1.5em;
+                color: #555;
+                margin: 0;
+                text-shadow: 0 0 5px rgba(230, 126, 34, 0.8);
+            }
+
+            .coffee-info p {
+                margin: 10px 0;
+                color: #777;
+            }
+
+            .price {
+                font-weight: bold;
+                color: #222;
+            }
+
+            .buy-now {
+                display: inline-block;
+                margin-top: 10px;
+                padding: 10px 20px;
+                background-color: #e67e22;
+                color: #fff;
+                border-radius: 5px;
+                font-weight: bold;
+                text-decoration: none;
+                transition: background-color 0.3s ease;
+            }
+
+            .buy-now:hover {
+                background-color: #d35400;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <a href="index.html">Home</a>
+            
+        </div>
+
+        <div id="box">
+            <div id="moving-text">Every Sip is a Symphony</div>
+        </div>
+
+        <div id="coffee-section">
+            <!-- Menu Items -->
+            <div class="coffee-item">
+                <img src="https://cdn.shopify.com/s/files/1/0104/9211/7092/files/Module-2a.jpg?v=164181905">
+                <div class="coffee-info">
+                    <h3>Espresso</h3>
+                    <p>Bold and rich flavor, perfect for coffee lovers.</p>
+                    <p class="price">₹120</p>
+                    <a href="#" class="buy-now">Buy Now</a>
+                </div>
+            </div>
+            <div class="coffee-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkGU8wIptWDM2z4jtwEFBHceVD1FPbdyvGtw&s">
+                <div class="coffee-info">
+                    <h3>Caramel Latte</h3>
+                    <p>Sweet and creamy with a touch of caramel delight.</p>
+                    <p class="price">₹150</p>
+                    <a href="#" class="buy-now">Buy Now</a>
+                </div>
+            </div>
+            <div class="coffee-item">
+                <img src="https://cdn.sanity.io/images/t3ffnogl/production/a69fc6692818956bcaa6fa38064fad00fbfb5fee-3072x4080.jpg?w=1000&fm=webp">
+                <div class="coffee-info">
+                    <h3>Mocha Delight</h3>
+                    <p>A perfect blend of coffee and rich chocolate.</p>
+                    <p class="price">₹160</p>
+                    <a href="#" class="buy-now">Buy Now</a>
+                </div>
+            </div>
+            <div class="coffee-item">
+                <img src="https://xliiicoffee.com/wp-content/uploads/2023/08/202308301021-2.jpg">
+                <div class="coffee-info">
+                    <h3>Cold Brew</h3>
+                    <p>Refreshing and smooth, perfect for warm days.</p>
+                    <p class="price">₹140</p>
+                    <a href="#" class="buy-now">Buy Now</a>
+                </div>
+            </div>
+            <div class="coffee-item">
+                <img src="https://kapnosdc.com/wp-content/uploads/2024/03/what-is-a-Cortado.jpg">
+                <div class="coffee-info">
+                    <h3>Cortado</h3>
+                    <p>Perfect balance of espresso and milk.</p>
+                    <p class="price">₹130</p>
+                    <a href="#" class="buy-now">Buy Now</a>
+                </div>
+            </div>
+            <div class="coffee-item">
+                <img src="https://www.mysticmonkcoffee.com/cdn/shop/articles/americano_coffee_1024x.png?v=1706611607">
+                <div class="coffee-info">
+                    <h3>Americano</h3>
+                    <p>Smooth and bold, a true classic.</p>
+                    <p class="price">₹160</p>
+                    <a href="#" class="buy-now">Buy Now</a>
+                </div>
+            </div>
+            <div class="coffee-item">
+                <img src="https://cdn1.matadornetwork.com/blogs/1/2018/10/Golden-cappuccino.jpg">
+                <div class="coffee-info">
+                    <h3>Golden Cappuccino</h3>
+                    <p>A luxurious blend with a golden touch.</p>
+                    <p class="price">₹170</p>
+                    <a href="#" class="buy-now">Buy Now</a>
+                </div>
+            </div>
+            <div class="coffee-item">
+                <img src="https://www.sharmispassions.com/wp-content/uploads/2020/04/DalgonaCoffee44.jpg">
+                <div class="coffee-info">
+                    <h3>Dalgona Coffee</h3>
+                    <p>Fluffy, frothy, and full of flavor.</p>
+                    <p class="price">₹150</p>
+                    <a href="#" class="buy-now">Buy Now</a>
+                </div>
+            </div>
+            <!-- Additional Items -->
+            <div class="coffee-item">
+                <img src="https://shottbeverages.com/wp-content/uploads/2019/05/Peppermint-Matcha-Latte.jpg">
+                <div class="coffee-info">
+                    <h3>Matcha Latte</h3>
+                    <p>A creamy blend of matcha and milk.</p>
+                    <p class="price">₹180</p>
+                    <a href="#" class="buy-now">Buy Now</a>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>
+
